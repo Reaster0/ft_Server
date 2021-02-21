@@ -10,10 +10,12 @@ server{
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    root /var/www/ft_server;
-    index index.php index.html index.htm index.nginx-debian.html;
+  server_name localhost www.localhost;
+   
+    root /var/www/html;
+    index       index.php index.html index.nginx-debian.html;
 
-    server_name localhost www.localhost;
+  
     ssl_certificate localhost.pem;
     ssl_certificate_key localhost-key.pem;
 
