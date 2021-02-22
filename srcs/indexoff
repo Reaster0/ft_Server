@@ -1,0 +1,3 @@
+cp -r /nginxconf_no_index /etc/nginx/sites-available/localhost
+service nginx restart
+echo "autoindex deactivated"
