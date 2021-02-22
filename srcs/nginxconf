@@ -11,12 +11,12 @@ server{
     listen [::]:443 ssl;
 
 ssl on;
-  ssl_certificate /etc/ssl/nginx-selfsigned.crt;
-  ssl_certificate_key /etc/ssl/nginx-selfsigned.key;
+   ssl_certificate /localhost.pem;
+    ssl_certificate_key /localhost-key.pem;
 
   server_name localhost;
    
-    root /var/www/html/localhost;
+    root /var/www/localhost;
     index       index.php index.html index.htm index.nginx-debian.html;
 
     location / {
