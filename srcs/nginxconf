@@ -3,22 +3,22 @@ server {
     listen [::]:80;
 
     server_name localhost;
-    return 301 https://$host$request_uri;
+    return 301 https://localhost$request_uri;
 }
 
 server{
-    listen 443 ssl;
-    listen [::]:443 ssl;
+    listen 443;
+    listen [::]:443;
 
-ssl on;
-   ssl_certificate /localhost.pem;
-    ssl_certificate_key /localhost-key.pem;
+   ssl on;
+   ssl_certificate /etc/ssl/certs/localhost.pem;
+    ssl_certificate_key /etc/ssl/certs/localhost-key.pem;
 
-  server_name localhost;
+
    
     root /var/www/localhost;
     index       index.php index.html index.htm index.nginx-debian.html;
-
+  server_name localhost;
     location / {
         autoindex on;
         try_files $uri $uri/ =404;

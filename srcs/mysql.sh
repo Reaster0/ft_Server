@@ -1,6 +1,5 @@
 service mysql start
-echo "CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" | mysql -u root
-echo "GRANT ALL ON wordpress.* TO 'root'@'localhost';" | mysql -u root
-echo "FLUSH PRIVILEGES;" | mysql -u root
-echo "update mysql.user set plugin = 'mysql_native_password' where user='root';" | mysql -u root
-mysql wordpress -u root < /wordpress.sql
+mysql -e "CREATE USER IF NOT EXISTS 'user42'@'localhost' IDENTIFIED BY 'user42';"
+mysql -e "CREATE DATABASE IF NOT EXISTS wordpress;" 
+mysql -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'user42'@'localhost' WITH GRANT OPTION;"
+mysql -e "FLUSH PRIVILEGES;"
