@@ -13,7 +13,7 @@
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = 'hellowoooooooooooooooooooooooorl'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = '00000000000000000000000000000000'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -38,8 +38,8 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 /* User used to manipulate with storage */
 // $cfg['Servers'][$i]['controlhost'] = '';
 // $cfg['Servers'][$i]['controlport'] = '';
-$cfg['Servers'][$i]['controluser'] = 'admin';
-$cfg['Servers'][$i]['controlpass'] = 'admin';
+$cfg['Servers'][$i]['controluser'] = 'user42';
+$cfg['Servers'][$i]['controlpass'] = 'user42';
 
 /* Storage database and tables */
 $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
@@ -151,4 +151,4 @@ $cfg['SaveDir'] = '';
  * You can find more configuration options in the documentation
  * in the doc/ folder or at <https://docs.phpmyadmin.net/>.
  */
-$cfg['TempDir'] = '/var/lib/phpmyadmin/tempo';
+$cfg['TempDir'] = '/var/lib/phpmyadmin/temp';

@@ -1,3 +1,0 @@
-cp /nginxconf /etc/nginx/sites-available/localhost
-service nginx restart
-echo "autoindex reactivated"
