@@ -15,7 +15,8 @@ RUN mkdir /var/www/localhost
 COPY srcs/nginxconf /
 COPY srcs/nginxconf_no_index /
 COPY srcs/index.sh /
-RUN /index.sh $index
+RUN chmod +x /index.sh \
+&& /index.sh $index
 
 COPY srcs/wordpress.tar.gz /wordpress.tar.gz
 COPY srcs/wp-config.php /
